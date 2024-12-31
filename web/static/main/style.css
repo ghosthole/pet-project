@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+body {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+}
+
+
+div.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+div.logo p {
+    margin-left: 15px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+div.logo img {
+    height: 40px;
+}
+
+.navigation {
+    display: block;
+    background-color: rgb(252, 250, 248);
+    padding: 0 20px 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Добавляем плавный переход для движения и прозрачности */
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0 0 0 15px;
+    padding: 0;
+}
+
+.navigation a {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    padding: 10px;
+    transition: background-color 0.2s ease;
+    border-radius: 5px;
+}
+
+button.service-button {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+    transition: background-color 0.2s ease;
+    background-color: rgb(252, 250, 248);
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.navigation .add-task {
+    color: rgb(168, 31, 0);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.navigation .bi-plus-circle-fill {
+    font-size: 24px;
+    color: rgb(220, 76, 62);
+}
+
+.navigation a:hover, button:hover {
+    background-color: rgb(0, 0, 0, 0.1);
+    border: none;
+}
+
+.navigation i {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.title {
+    max-width: 800px; /* Ограничиваем максимальную ширину для читабельности */
+    margin: 20px auto;
+    width: calc(100% - 300px); /* Отступ слева, учитывающий ширину навигации */
+}
+
+.page-info {
+    margin: 20px auto; /* Отступ сверху и снизу, авто-выравнивание по горизонтали */
+    padding: 20px;
+    width: calc(100% - 300px); /* Учитываем ширину навигации (250px) и дополнительный отступ (50px) */
+    max-width: 800px; /* Ограничиваем максимальную ширину для читабельности */
+    box-sizing: border-box; /* Учитываем padding в ширину блока */
+    border-radius: 8px; /* Закругляем края для эстетики */
+    line-height: 1.6; /* Улучшаем читаемость текста */
+    text-align: justify;
+    display: flex; /* Используем Flexbox для контейнера */
+    flex-wrap: wrap; /* Обёртка блоков на следующую строку при необходимости */
+    justify-content: center; /* Выравниваем блоки по центру */
+}
+
+
+h5.name {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 400;
+    color: #202020;
+}
+
+p.description {
+    font-size: 12px;
+    margin: 0;
+    font-weight: 400;
+    color: #666666;
+    white-space: nowrap; /* Запрещаем перенос текста */
+    overflow: hidden; /* Скрываем текст, выходящий за пределы */
+    text-overflow: ellipsis; /* Добавляем многоточие вместо обрезанного текста */
+}
+
+@media (max-width: 1400px) {
+    .page-info {
+        margin-left: 300px; /* Учитываем ширину навигации + небольшой отступ */
+        padding: 20px; /* Можно немного уменьшить внутренний отступ */
+    }
+
+    .title {
+        margin-left: 300px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navigation {
+        transform: translateX(-100%); /* Перемещаем панель за пределы экрана */
+        opacity: 0; /* Делаем панель прозрачной */
+    }
+
+    .navigation.active {
+        transform: translateX(0); /* Возвращаем панель на экран */
+        opacity: 1; /* Делаем панель видимой */
+    }
+
+    .page-info {
+        width: 100%;
+        margin: 0;
+    }
+
+    .title {
+        margin-left: 0;
+    }
+}
+
+button.note {
+    width: 100%; /* Одинаковая ширина */
+    max-width: 800px; /* Ограничение максимальной ширины */
+    min-height: 70px; /* Устанавливаем минимальную высоту */
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    flex-direction: column; /* Содержимое располагается вертикально */
+    justify-content: space-between; /* Равномерное распределение содержимого */
+    border: none;
+    background-color: white;
+    text-align: left;
+    padding: 10px; /* Увеличиваем внутренние отступы для аккуратного вида */
+    margin: 0 auto; /* Центрируем блок и добавляем отступ снизу */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Линия снизу */
+    border-radius: 3px;
+    cursor: pointer;
+    box-sizing: border-box; /* Учитываем padding в ширине */
+}
+
+button.note:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

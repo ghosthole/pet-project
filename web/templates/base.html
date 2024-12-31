@@ -1,0 +1,33 @@
+{% load static %}
+
+<head>
+    <link rel="icon" href="{% static 'main/icons8-orange-pumpkin-3d-fluency-32.png' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} | TodoPumpkin</title>
+</head>
+<body>
+    <div class="content">
+        <div class="navigation">
+            <div class="logo">
+                <img src="{% static 'main/icons8-orange-pumpkin-3d-fluency-32.png' %}" alt="logo">
+                <p class="logo-name">TodoPumpkin</p>
+            </div>
+            <ul>
+                <li><button class="service-button add-task"><i class="bi bi-plus-circle-fill"></i>Добавить задачу</button></li>
+                <li><button class="service-button"><i class="bi bi-search"></i>Поиск</button></li>
+                <li><a href="{% url 'inbox' %}"><i class="bi bi-inbox"></i>Входящее</a></li>
+                <li><a href="{% url 'today' %}"><i class="bi bi-calendar-date"></i>Сегодня</a></li>
+                <li><a href="#"><i class="bi bi-calendar-week"></i>Предстоящее</a></li>
+                <li><a href="#"><i class="bi bi-grid"></i>Фильтры и метки</a></li>
+            </ul>
+        </div>
+        <div class="title">
+            <h1>{% block section %}{% endblock %}</h1>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+</html>
